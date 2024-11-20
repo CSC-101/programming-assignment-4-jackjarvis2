@@ -56,6 +56,7 @@ def population(data: List[CountyDemographics], field: str) -> float:
     total_population = sum(float(entry.population['2014 Population']) for entry in data)
     sub_population = sum(float(entry.population['2014 Population']) * (float(entry.__dict__[field_parts[0]][field_parts[1]]) / 100.0) for entry in data)
     print(f"2014 {field} population: {sub_population}")
+    print(f"Total 2014 population: {total_population}")
     return sub_population
 
 # Calculate and print the percentage for a specific field
